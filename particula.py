@@ -12,6 +12,7 @@ class Particula:
             red:int, 
             green:int, 
             blue:int):
+
         self.id = id
         self.origenX = origenX
         self.origenY = origenY
@@ -21,3 +22,6 @@ class Particula:
         self.red = red
         self.green = green
         self.blue = blue
+
+    
+    
