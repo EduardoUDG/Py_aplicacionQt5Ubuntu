@@ -33,14 +33,15 @@ class Particula:
         return distancia_euclidiana( x_1, y_1, x_2, y_2 )
 
     def __str__(self) -> str:
-        return ("Particula " + str(self.__id) + 
-            " origenX " + str(self.__origenX) +
-            " origenY " + str(self.__origenY) +
-            " destinoX " + str(self.__destinoX) +
-            " destinoY " + str(self.__destinoY) +
-            " red " + str(self.__red) +
-            " green " + str(self.__green) +
-            " blue " + str(self.__blue) 
+        return (" Particula: " + str(self.__id) + 
+                " origenX: " + str(self.__origenX) +
+                " origenY: " + str(self.__origenY) +
+                " destinoX: " + str(self.__destinoX) +
+                " destinoY: " + str(self.__destinoY) +
+                " velocidad: " + str(self.__velocidad) +
+                " red: " + str(self.__red) +
+                " green: " + str(self.__green) +
+                " blue: " + str(self.__blue) + "\n"
         )
             
     
