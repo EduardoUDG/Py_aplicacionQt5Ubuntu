@@ -13,34 +13,34 @@ class Particula:
             green, 
             blue):
 
-        self.id = id
-        self.origenX = origenX
-        self.origenY = origenY
-        self.destinoX = destinoX
-        self.destinoY = destinoY
-        self.velocidad = velocidad
-        self.red = red
-        self.green = green
-        self.blue = blue
+        self.__id = id
+        self.__origenX = origenX
+        self.__origenY = origenY
+        self.__destinoX = destinoX
+        self.__destinoY = destinoY
+        self.__velocidad = velocidad
+        self.__red = red
+        self.__green = green
+        self.__blue = blue
 
 
     def distancia(self)->float:
-        x_1 = self.origenX
-        x_2 = self.destinoX
-        y_1 = self.origenY
-        y_2 = self.destinoY
+        x_1 = self.__origenX
+        x_2 = self.__destinoX
+        y_1 = self.__origenY
+        y_2 = self.__destinoY
         
         return distancia_euclidiana( x_1, y_1, x_2, y_2 )
 
     def __str__(self) -> str:
-        return ("Particula " + str(self.id) + 
-            " origenX " + str(self.origenX) +
-            " origenY " + str(self.origenY) +
-            " destinoX " + str(self.destinoX) +
-            " destinoY " + str(self.destinoY) +
-            " red " + str(self.red) +
-            " green " + str(self.green) +
-            " blue " + str(self.blue) 
+        return ("Particula " + str(self.__id) + 
+            " origenX " + str(self.__origenX) +
+            " origenY " + str(self.__origenY) +
+            " destinoX " + str(self.__destinoX) +
+            " destinoY " + str(self.__destinoY) +
+            " red " + str(self.__red) +
+            " green " + str(self.__green) +
+            " blue " + str(self.__blue) 
         )
             
     
