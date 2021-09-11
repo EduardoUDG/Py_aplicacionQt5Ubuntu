@@ -10,7 +10,7 @@ class StartLabs:
         self.particulas.append( particula )
 
     def agregar_inicio(self, particula:Particula):
-        self.particulas.insert( particula )
+        self.particulas.insert( 0, particula )
 
     def __str__(self) -> str:
         return "\n".join( str(e) for e in self.particulas )
