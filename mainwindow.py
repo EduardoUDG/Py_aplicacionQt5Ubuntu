@@ -6,3 +6,10 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__()
         ui = Ui_MainWindow()
         ui.setupUi(self)
+
+
+    #     self.ui.pushButton.clicked.connect(self.clickEnviar)
+
+    
+    # def clickEnviar(self):
+    #     print("Tu paquete a sido enviado")
