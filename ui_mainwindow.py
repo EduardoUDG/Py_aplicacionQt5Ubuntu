@@ -22,15 +22,15 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout_2 = QGridLayout(self.centralwidget)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.mostrar_pushButton = QPushButton(self.centralwidget)
+        self.mostrar_pushButton.setObjectName(u"mostrar_pushButton")
+
+        self.gridLayout_2.addWidget(self.mostrar_pushButton, 4, 0, 1, 1)
+
         self.enviarInicio_pushButton = QPushButton(self.centralwidget)
         self.enviarInicio_pushButton.setObjectName(u"enviarInicio_pushButton")
 
-        self.gridLayout_2.addWidget(self.enviarInicio_pushButton, 3, 0, 1, 1)
-
-        self.pushButton = QPushButton(self.centralwidget)
-        self.pushButton.setObjectName(u"pushButton")
-
-        self.gridLayout_2.addWidget(self.pushButton, 2, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.enviarInicio_pushButton, 2, 0, 1, 1)
 
         self.groupBox = QGroupBox(self.centralwidget)
         self.groupBox.setObjectName(u"groupBox")
@@ -193,12 +193,7 @@ class Ui_MainWindow(object):
         self.enviarFinal_pushButton = QPushButton(self.centralwidget)
         self.enviarFinal_pushButton.setObjectName(u"enviarFinal_pushButton")
 
-        self.gridLayout_2.addWidget(self.enviarFinal_pushButton, 4, 0, 1, 1)
-
-        self.mostrar_pushButton = QPushButton(self.centralwidget)
-        self.mostrar_pushButton.setObjectName(u"mostrar_pushButton")
-
-        self.gridLayout_2.addWidget(self.mostrar_pushButton, 5, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.enviarFinal_pushButton, 3, 0, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
@@ -216,8 +211,8 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        self.mostrar_pushButton.setText(QCoreApplication.translate("MainWindow", u"mostrar", None))
         self.enviarInicio_pushButton.setText(QCoreApplication.translate("MainWindow", u"Agregar al inicio", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Agregar", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Capturar particulas", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"velocidad", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"blue", None))
@@ -230,6 +225,5 @@ class Ui_MainWindow(object):
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"color :", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"id", None))
         self.enviarFinal_pushButton.setText(QCoreApplication.translate("MainWindow", u"Agregar al final", None))
-        self.mostrar_pushButton.setText(QCoreApplication.translate("MainWindow", u"mostrar", None))
     # retranslateUi
 

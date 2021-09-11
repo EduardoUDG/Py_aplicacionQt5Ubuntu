@@ -15,17 +15,17 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="3" column="0">
-     <widget class="QPushButton" name="enviarInicio_pushButton">
+    <item row="4" column="0">
+     <widget class="QPushButton" name="mostrar_pushButton">
       <property name="text">
-       <string>Agregar al inicio</string>
+       <string>mostrar</string>
       </property>
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="enviarInicio_pushButton">
       <property name="text">
-       <string>Agregar</string>
+       <string>Agregar al inicio</string>
       </property>
      </widget>
     </item>
@@ -216,17 +216,10 @@
     <item row="1" column="1">
      <widget class="QPlainTextEdit" name="salida_plainTextEdit"/>
     </item>
-    <item row="4" column="0">
+    <item row="3" column="0">
      <widget class="QPushButton" name="enviarFinal_pushButton">
       <property name="text">
        <string>Agregar al final</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QPushButton" name="mostrar_pushButton">
-      <property name="text">
-       <string>mostrar</string>
       </property>
      </widget>
     </item>

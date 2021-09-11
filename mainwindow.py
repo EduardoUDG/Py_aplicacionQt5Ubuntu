@@ -11,9 +11,8 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.ui.pushButton.clicked.connect(self.clickEnviarInicio)
         self.ui.enviarInicio_pushButton.clicked.connect(self.clickEnviarInicio)
-        self.ui.enviarFinal_pushButton.clicked.connect(self.clickEnviarInicio)
+        self.ui.enviarFinal_pushButton.clicked.connect(self.clickEnviarFinal)
         self.ui.mostrar_pushButton.clicked.connect(self.mostrar)
     
     def clickEnviarInicio(self):
@@ -26,7 +25,7 @@ class MainWindow(QMainWindow):
         red = self.ui.red_spinBox.value()
         green = self.ui.green_spinBox.value()
         blue = self.ui.blue_spinBox.value()
-        self.acelerador.agregar_final( 
+        self.acelerador.agregar_inicio( 
             Particula( id, origenX, origenY, destinoX, destinoY, velocidad, red, green, blue ) ) 
         self.clearData()
 
