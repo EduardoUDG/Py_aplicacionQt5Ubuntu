@@ -1,17 +1,10 @@
-from algoritmos  import distancia_euclidiana
+from algoritmos import distancia_euclidiana
+
 
 class Particula:
-    
-    def __init__(self, 
-            id, 
-            origenX, 
-            origenY, 
-            destinoX, 
-            destinoY, 
-            velocidad, 
-            red, 
-            green, 
-            blue):
+    def __init__(
+        self, id, origenX, origenY, destinoX, destinoY, velocidad, red, green, blue
+    ):
 
         self.__id = id
         self.__origenX = origenX
@@ -23,25 +16,46 @@ class Particula:
         self.__green = green
         self.__blue = blue
 
-
-    def distancia(self)->float:
+    def distancia(self) -> float:
         x_1 = self.__origenX
         x_2 = self.__destinoX
         y_1 = self.__origenY
         y_2 = self.__destinoY
-        
-        return distancia_euclidiana( x_1, y_1, x_2, y_2 )
+
+        return distancia_euclidiana(x_1, y_1, x_2, y_2)
 
     def __str__(self) -> str:
-        return (" Particula: " + str(self.__id) + 
-                " origenX: " + str(self.__origenX) +
-                " origenY: " + str(self.__origenY) +
-                " destinoX: " + str(self.__destinoX) +
-                " destinoY: " + str(self.__destinoY) +
-                " velocidad: " + str(self.__velocidad) +
-                " red: " + str(self.__red) +
-                " green: " + str(self.__green) +
-                " blue: " + str(self.__blue) + "\n"
+        return (
+            " Particula: "
+            + str(self.__id)
+            + " origenX: "
+            + str(self.__origenX)
+            + " origenY: "
+            + str(self.__origenY)
+            + " destinoX: "
+            + str(self.__destinoX)
+            + " destinoY: "
+            + str(self.__destinoY)
+            + " velocidad: "
+            + str(self.__velocidad)
+            + " red: "
+            + str(self.__red)
+            + " green: "
+            + str(self.__green)
+            + " blue: "
+            + str(self.__blue)
+            + "\n"
         )
-            
-    
+
+    def to_json(self):
+        return {
+            "id": self.__id,
+            "origenX": self.__origenX,
+            "origenY": self.__origenY,
+            "destinoX": self.__destinoX,
+            "destinoY": self.__destinoY,
+            "velocidad": self.__velocidad,
+            "red": self.__red,
+            "green": self.__green,
+            "blue": self.__blue,
+        }
