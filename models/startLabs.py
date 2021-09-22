@@ -1,5 +1,5 @@
 
-from particula import Particula
+from models.particula import Particula
 import json
 class StartLabs:
 

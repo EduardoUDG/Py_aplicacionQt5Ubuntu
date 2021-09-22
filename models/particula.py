@@ -1,4 +1,4 @@
-from algoritmos import distancia_euclidiana
+from models.algoritmos import distancia_euclidiana
 
 
 class Particula:

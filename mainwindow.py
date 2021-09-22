@@ -1,7 +1,7 @@
 from ui_mainwindow import Ui_MainWindow
 from PySide2.QtWidgets import QFileDialog, QMainWindow, QMessageBox
-from particula import Particula
-from startLabs import StartLabs
+from models.particula import Particula
+from models.startLabs import StartLabs
 
 class MainWindow(QMainWindow):
 
