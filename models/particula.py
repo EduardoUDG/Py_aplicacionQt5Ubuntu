@@ -59,3 +59,20 @@ class Particula:
             "green": self.__green,
             "blue": self.__blue,
         }
+
+    
+    @property
+    def id(self):
+        return self.__id
+    
+    @property
+    def origenX(self):
+        return self.__origenX
+
+    @origenX.setter
+    def origenX(self, newOrigenX ):
+        if newOrigenX > 0:
+            self.__origenX = newOrigenX
+        else:
+            self.__origenX = 1
+
