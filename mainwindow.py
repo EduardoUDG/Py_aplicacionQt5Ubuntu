@@ -1,5 +1,5 @@
 from ui_mainwindow import Ui_MainWindow
-from PySide2.QtWidgets import QFileDialog, QMainWindow, QMessageBox
+from PySide2.QtWidgets import QFileDialog, QMainWindow, QMessageBox, QTableWidgetItem
 from models.particula import Particula
 from models.startLabs import StartLabs
 
@@ -32,15 +32,65 @@ class MainWindow(QMainWindow):
         self.ui.table.setHorizontalHeaderLabels(headers)
 
         self.ui.table.setRowCount(len(self.acelerador))
-
+        row = 0
         for particula in self.acelerador:
-            print(particula)
+            self.ui.table.setRowCount( len(self.acelerador) )
 
+            id = QTableWidgetItem( str(particula.id) )
+            origenX = QTableWidgetItem( str(particula.origenX) ) 
+            origenY = QTableWidgetItem( str(particula.origenY) )
+            destinoX = QTableWidgetItem( str(particula.destinoX) )
+            destinoY = QTableWidgetItem( str(particula.destinoY) )
+            velocidad = QTableWidgetItem( str(particula.velocidad) )
+            red = QTableWidgetItem( str(particula.red) )
+            green = QTableWidgetItem( str(particula.green) )
+            blue = QTableWidgetItem( str(particula.blue) ) 
+
+            self.ui.table.setItem( row, 0, id )
+            self.ui.table.setItem( row, 1, origenX )
+            self.ui.table.setItem( row, 2, origenY )
+            self.ui.table.setItem( row, 3, destinoX )
+            self.ui.table.setItem( row, 4, destinoY )
+            self.ui.table.setItem( row, 5, velocidad )
+            self.ui.table.setItem( row, 6, red )
+            self.ui.table.setItem( row, 7, green )
+            self.ui.table.setItem( row, 8, blue )
+            row += 1
+            
 
 
     def buscar(self):
         print("Buscar")
+        idBusqueda = self.ui.buscar_lineEdit.text()
 
+        for particula in self.acelerador:
+            if(idBusqueda == str(particula.id)):
+                self.ui.table.clear()
+                self.ui.table.setRowCount(1)
+
+                id = QTableWidgetItem( str(particula.id) )
+                origenX = QTableWidgetItem( str(particula.origenX) ) 
+                origenY = QTableWidgetItem( str(particula.origenY) )
+                destinoX = QTableWidgetItem( str(particula.destinoX) )
+                destinoY = QTableWidgetItem( str(particula.destinoY) )
+                velocidad = QTableWidgetItem( str(particula.velocidad) )
+                red = QTableWidgetItem( str(particula.red) )
+                green = QTableWidgetItem( str(particula.green) )
+                blue = QTableWidgetItem( str(particula.blue) ) 
+
+                self.ui.table.setItem( 0, 0, id )
+                self.ui.table.setItem( 0, 1, origenX )
+                self.ui.table.setItem( 0, 2, origenY )
+                self.ui.table.setItem( 0, 3, destinoX )
+                self.ui.table.setItem( 0, 4, destinoY )
+                self.ui.table.setItem( 0, 5, velocidad )
+                self.ui.table.setItem( 0, 6, red )
+                self.ui.table.setItem( 0, 7, green )
+                self.ui.table.setItem( 0, 8, blue )
+
+                return
+
+        QMessageBox.warning(self, "ID no encontrado", "No se pudo encontrar el ID ingresado")
 
 
 
