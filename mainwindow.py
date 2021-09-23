@@ -30,7 +30,11 @@ class MainWindow(QMainWindow):
         self.ui.table.setColumnCount( 9 )
         headers = ["Id" ,"origenX" ,"origenY" ,"destinoX" ,"destinoY" ,"velocidad" ,"red" ,"green" ,"blue"]
         self.ui.table.setHorizontalHeaderLabels( headers )
-        self.ui.table.setRowCount( 10 )
+        self.ui.table.setRowCount( len(self.acelerador) )
+
+        for particula in self.acelerador:
+            print(particula)
+
 
 
     def buscar(self):

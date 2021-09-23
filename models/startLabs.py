@@ -4,7 +4,7 @@ import json
 class StartLabs:
 
     def __init__(self):
-        self.particulas = []
+        self.__particulas = []
 
     def agregar_final(self, particula:Particula):
         self.particulas.append( particula )
@@ -14,6 +14,22 @@ class StartLabs:
 
     def __str__(self) -> str:
         return "\n".join( str(e) for e in self.particulas )
+
+    def __len__(self):
+        return len( self.__particulas )
+
+    def __iter__(self):
+        self.count = 0
+        return self
+
+    def __next__(self):
+        if self.count < len( self.__particulas ):
+            particula = self.__particulas[self.count]
+            self.count += 1
+            return particula
+        else:
+            raise StopIteration
+
 
     def guardar(self, ubicacion):
         # archivo = open( ubicacion, 'w' )
