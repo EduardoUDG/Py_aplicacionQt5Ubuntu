@@ -20,6 +20,25 @@ class MainWindow(QMainWindow):
         self.ui.actionAbrir.triggered.connect( self.abrir )
         self.ui.actionGuardar.triggered.connect( self.guardar )
 
+        self.ui.buscar_pushButton.clicked.connect( self.buscar )
+        self.ui.mostrarTabla_pushButton.clicked.connect( self.mostrarTabla )
+
+
+
+    def mostrarTabla(self):
+        print("Mostrar tabla")
+        self.ui.table.setColumnCount( 9 )
+        headers = ["Id" ,"origenX" ,"origenY" ,"destinoX" ,"destinoY" ,"velocidad" ,"red" ,"green" ,"blue"]
+        self.ui.table.setHorizontalHeaderLabels( headers )
+        self.ui.table.setRowCount( 10 )
+
+
+    def buscar(self):
+        print("Buscar")
+
+
+
+
 
     def guardar( self ):
         print("Guardao")
