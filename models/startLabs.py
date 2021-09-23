@@ -13,7 +13,7 @@ class StartLabs:
         self.particulas.insert( 0, particula )
 
     def __str__(self) -> str:
-        return "\n".join( str(e) for e in self.particulas )
+        return "".join( str(e)+"\n" for e in self.__particulas )
 
     def __len__(self):
         return len( self.__particulas )
@@ -23,7 +23,7 @@ class StartLabs:
         return self
 
     def __next__(self):
-        if self.count < len( self.__particulas ):
+        if self.count<len(self.__particulas):
             particula = self.__particulas[self.count]
             self.count += 1
             return particula
@@ -33,15 +33,21 @@ class StartLabs:
 
     def guardar(self, ubicacion):
         # archivo = open( ubicacion, 'w' )
-
-        with open(ubicacion,'w') as archivo:
-            # archivo.write( str(self) )
-            listaDic = [ e.to_json() for e in self.particulas ]
-            json.dump( listaDic, archivo, indent=5 )
-
+        try:
+            with open(ubicacion,'w') as archivo:
+                # archivo.write( str(self) )
+                listaDic = [ e.to_json() for e in self.__particulas ]
+                json.dump( listaDic, archivo, indent=5 )
+            return True
+        except:
+            return False
     
     def abrir(self, ubicacion):
-        with open(ubicacion,'r') as archivo:
-            listaDic = json.load( archivo )
+        try:
+            with open(ubicacion,'r') as archivo:
+                listaDic = json.load( archivo )
 
-            self.particulas = [ Particula(**e) for e in listaDic ]
+                self.__particulas = [ Particula(**e) for e in listaDic ]
+            return 1
+        except:
+            return 0

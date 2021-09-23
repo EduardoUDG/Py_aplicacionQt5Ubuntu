@@ -1,3 +1,4 @@
+from typing import OrderedDict
 from models.algoritmos import distancia_euclidiana
 
 
@@ -44,7 +45,6 @@ class Particula:
             + str(self.__green)
             + " blue: "
             + str(self.__blue)
-            + "\n"
         )
 
     def to_json(self):
@@ -57,7 +57,7 @@ class Particula:
             "velocidad": self.__velocidad,
             "red": self.__red,
             "green": self.__green,
-            "blue": self.__blue,
+            "blue": self.__blue
         }
 
     
@@ -69,10 +69,38 @@ class Particula:
     def origenX(self):
         return self.__origenX
 
-    @origenX.setter
-    def origenX(self, newOrigenX ):
-        if newOrigenX > 0:
-            self.__origenX = newOrigenX
-        else:
-            self.__origenX = 1
+    @property
+    def origenY(self):
+        return self.__origenY
+
+    @property
+    def destinoX(self):
+        return self.__destinoX
+
+    @property
+    def destinoY(self):
+        return self.__destinoX
+
+    @property
+    def velocidad(self):
+        return self.__velocidad
+
+    @property
+    def red(self):
+        return self.__red
+
+    @property
+    def green(self):
+        return self.__green
+
+    @property
+    def blue(self):
+        return self.__blue
+
+    # @origenX.setter
+    # def origenX(self, newOrigenX ):
+    #     if newOrigenX > 0:
+    #         self.__origenX = newOrigenX
+    #     else:
+    #         self.__origenX = 1
 
