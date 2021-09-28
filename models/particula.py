@@ -16,14 +16,8 @@ class Particula:
         self.__red = red
         self.__green = green
         self.__blue = blue
+        self.__distancia = distancia_euclidiana( self.__origenX, self.__origenY, self.__destinoX, self.__destinoY )
 
-    def distancia(self) -> float:
-        x_1 = self.__origenX
-        x_2 = self.__destinoX
-        y_1 = self.__origenY
-        y_2 = self.__destinoY
-
-        return distancia_euclidiana(x_1, y_1, x_2, y_2)
 
     def __str__(self) -> str:
         return (
@@ -96,6 +90,10 @@ class Particula:
     @property
     def blue(self):
         return self.__blue
+
+    @property
+    def distancia(self):
+        return self.__distancia
 
     # @origenX.setter
     # def origenX(self, newOrigenX ):

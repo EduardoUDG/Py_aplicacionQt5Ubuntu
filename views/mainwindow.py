@@ -36,7 +36,6 @@ class MainWindow(QMainWindow):
         row = 0
         for particula in self.acelerador:
             self.ui.table.setRowCount( len(self.acelerador) )
-            distanciaEu = str(distancia_euclidiana( particula.origenX, particula.origenY, particula.destinoX, particula.destinoY))
 
             id = QTableWidgetItem( str(particula.id) )
             origenX = QTableWidgetItem( str(particula.origenX) ) 
@@ -44,7 +43,7 @@ class MainWindow(QMainWindow):
             destinoX = QTableWidgetItem( str(particula.destinoX) )
             destinoY = QTableWidgetItem( str(particula.destinoY) )
             velocidad = QTableWidgetItem( str(particula.velocidad) )
-            distancia = QTableWidgetItem( distanciaEu )
+            distancia = QTableWidgetItem( str(particula.distancia) )
             red = QTableWidgetItem( str(particula.red) )
             green = QTableWidgetItem( str(particula.green) )
             blue = QTableWidgetItem( str(particula.blue) ) 
