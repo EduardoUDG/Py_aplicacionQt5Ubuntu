@@ -1,3 +1,4 @@
+from models.algoritmos import distancia_euclidiana
 from ui_mainwindow import Ui_MainWindow
 from PySide2.QtWidgets import QFileDialog, QMainWindow, QMessageBox, QTableWidgetItem
 from models.particula import Particula
@@ -27,14 +28,15 @@ class MainWindow(QMainWindow):
 
     def mostrarTabla(self):
         print("Mostrar tabla")
-        self.ui.table.setColumnCount( 9 )
-        headers = ["Id", "origenX", "origenY", "destinoX", "destinoY", "velocidad", "red", "green", "blue"]
+        self.ui.table.setColumnCount( 10 )
+        headers = ["Id", "origenX", "origenY", "destinoX", "destinoY", "velocidad", "distancia" ,"red", "green", "blue"]
         self.ui.table.setHorizontalHeaderLabels(headers)
 
         self.ui.table.setRowCount(len(self.acelerador))
         row = 0
         for particula in self.acelerador:
             self.ui.table.setRowCount( len(self.acelerador) )
+            distanciaEu = str(distancia_euclidiana( particula.origenX, particula.origenY, particula.destinoX, particula.destinoY))
 
             id = QTableWidgetItem( str(particula.id) )
             origenX = QTableWidgetItem( str(particula.origenX) ) 
@@ -42,6 +44,7 @@ class MainWindow(QMainWindow):
             destinoX = QTableWidgetItem( str(particula.destinoX) )
             destinoY = QTableWidgetItem( str(particula.destinoY) )
             velocidad = QTableWidgetItem( str(particula.velocidad) )
+            distancia = QTableWidgetItem( distanciaEu )
             red = QTableWidgetItem( str(particula.red) )
             green = QTableWidgetItem( str(particula.green) )
             blue = QTableWidgetItem( str(particula.blue) ) 
@@ -52,9 +55,10 @@ class MainWindow(QMainWindow):
             self.ui.table.setItem( row, 3, destinoX )
             self.ui.table.setItem( row, 4, destinoY )
             self.ui.table.setItem( row, 5, velocidad )
-            self.ui.table.setItem( row, 6, red )
-            self.ui.table.setItem( row, 7, green )
-            self.ui.table.setItem( row, 8, blue )
+            self.ui.table.setItem( row, 6, distancia )
+            self.ui.table.setItem( row, 7, red )
+            self.ui.table.setItem( row, 8, green )
+            self.ui.table.setItem( row, 9, blue )
             row += 1
             
 
@@ -68,25 +72,29 @@ class MainWindow(QMainWindow):
                 self.ui.table.clear()
                 self.ui.table.setRowCount(1)
 
+                distanciaEu = str(distancia_euclidiana( particula.origenX, particula.origenY, particula.destinoX, particula.destinoY))
+
                 id = QTableWidgetItem( str(particula.id) )
                 origenX = QTableWidgetItem( str(particula.origenX) ) 
                 origenY = QTableWidgetItem( str(particula.origenY) )
                 destinoX = QTableWidgetItem( str(particula.destinoX) )
                 destinoY = QTableWidgetItem( str(particula.destinoY) )
                 velocidad = QTableWidgetItem( str(particula.velocidad) )
+                distancia = QTableWidgetItem( distanciaEu )
                 red = QTableWidgetItem( str(particula.red) )
                 green = QTableWidgetItem( str(particula.green) )
                 blue = QTableWidgetItem( str(particula.blue) ) 
 
-                self.ui.table.setItem( 0, 0, id )
-                self.ui.table.setItem( 0, 1, origenX )
-                self.ui.table.setItem( 0, 2, origenY )
-                self.ui.table.setItem( 0, 3, destinoX )
-                self.ui.table.setItem( 0, 4, destinoY )
-                self.ui.table.setItem( 0, 5, velocidad )
-                self.ui.table.setItem( 0, 6, red )
-                self.ui.table.setItem( 0, 7, green )
-                self.ui.table.setItem( 0, 8, blue )
+                self.ui.table.setItem( row, 0, id )
+                self.ui.table.setItem( row, 1, origenX )
+                self.ui.table.setItem( row, 2, origenY )
+                self.ui.table.setItem( row, 3, destinoX )
+                self.ui.table.setItem( row, 4, destinoY )
+                self.ui.table.setItem( row, 5, velocidad )
+                self.ui.table.setItem( row, 6, distancia )
+                self.ui.table.setItem( row, 7, red )
+                self.ui.table.setItem( row, 8, green )
+                self.ui.table.setItem( row, 9, blue )
 
                 return
 
