@@ -85,16 +85,16 @@ class MainWindow(QMainWindow):
                 green = QTableWidgetItem( str(particula.green) )
                 blue = QTableWidgetItem( str(particula.blue) ) 
 
-                self.ui.table.setItem( row, 0, id )
-                self.ui.table.setItem( row, 1, origenX )
-                self.ui.table.setItem( row, 2, origenY )
-                self.ui.table.setItem( row, 3, destinoX )
-                self.ui.table.setItem( row, 4, destinoY )
-                self.ui.table.setItem( row, 5, velocidad )
-                self.ui.table.setItem( row, 6, distancia )
-                self.ui.table.setItem( row, 7, red )
-                self.ui.table.setItem( row, 8, green )
-                self.ui.table.setItem( row, 9, blue )
+                self.ui.table.setItem( 0, 0, id )
+                self.ui.table.setItem( 0, 1, origenX )
+                self.ui.table.setItem( 0, 2, origenY )
+                self.ui.table.setItem( 0, 3, destinoX )
+                self.ui.table.setItem( 0, 4, destinoY )
+                self.ui.table.setItem( 0, 5, velocidad )
+                self.ui.table.setItem( 0, 6, distancia )
+                self.ui.table.setItem( 0, 7, red )
+                self.ui.table.setItem( 0, 8, green )
+                self.ui.table.setItem( 0, 9, blue )
 
                 return
 
