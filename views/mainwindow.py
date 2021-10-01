@@ -1,6 +1,6 @@
 from PySide2.QtGui import QColor, QPen
 from models.algoritmos import distancia_euclidiana
-from ui_mainwindow import Ui_MainWindow
+from .ui_mainwindow import Ui_MainWindow
 from PySide2.QtWidgets import QFileDialog, QGraphicsScene, QMainWindow, QMessageBox, QTableWidgetItem
 from models.particula import Particula
 from models.startLabs import StartLabs
