@@ -1,8 +1,10 @@
+from PySide2.QtGui import QColor, QPen
 from models.algoritmos import distancia_euclidiana
 from ui_mainwindow import Ui_MainWindow
-from PySide2.QtWidgets import QFileDialog, QMainWindow, QMessageBox, QTableWidgetItem
+from PySide2.QtWidgets import QFileDialog, QGraphicsScene, QMainWindow, QMessageBox, QTableWidgetItem
 from models.particula import Particula
 from models.startLabs import StartLabs
+from random import randint
 
 class MainWindow(QMainWindow):
 
@@ -21,8 +23,48 @@ class MainWindow(QMainWindow):
         self.ui.actionAbrir.triggered.connect( self.abrir )
         self.ui.actionGuardar.triggered.connect( self.guardar )
 
+        # Table
         self.ui.buscar_pushButton.clicked.connect( self.buscar )
         self.ui.mostrarTabla_pushButton.clicked.connect( self.mostrarTabla )
+
+        # Graficos
+        self.ui.limpiar.clicked.connect( self.limpiar )
+        self.ui.dibujar.clicked.connect( self.dibujar )
+        self.scene = QGraphicsScene()
+        self.ui.graphicsView.setScene( self.scene )
+
+
+    def limpiar(self):
+        print("Limpiar")     
+        self.scene.clear()
+
+    def wheelEvent(self, event):
+        if( event.delta()>0 ):
+            self.ui.graphicsView.scale( 1.2, 1.2)
+        else:
+            self.ui.graphicsView.scale( 0.8, 0.8 )
+
+
+    def dibujar(self):
+        print("Dibujar")
+
+        for particula in self.acelerador:
+            pen = QPen()
+            pen.setWidth( 2 )
+            r = particula.red
+            g = particula.green
+            b = particula.blue
+            color = QColor( r,g,b )
+            pen.setColor( color )
+
+            oriX = particula.origenX
+            oriY = particula.origenY
+            desX = particula.destinoX
+            desY = particula.destinoY
+
+            self.scene.addEllipse( oriX, oriY, 5, 5, pen )
+            self.scene.addEllipse( desX, desY, 5, 5, pen )
+            self.scene.addLine( oriX, oriY, desX, desY, pen )
 
 
 
