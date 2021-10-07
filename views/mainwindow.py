@@ -1,10 +1,10 @@
+from os import pardir
 from PySide2.QtGui import QColor, QPen
 from models.algoritmos import distancia_euclidiana
 from .ui_mainwindow import Ui_MainWindow
 from PySide2.QtWidgets import QFileDialog, QGraphicsScene, QMainWindow, QMessageBox, QTableWidgetItem
 from models.particula import Particula
 from models.startLabs import StartLabs
-from random import randint
 
 class MainWindow(QMainWindow):
 
@@ -26,6 +26,9 @@ class MainWindow(QMainWindow):
         # Table
         self.ui.buscar_pushButton.clicked.connect( self.buscar )
         self.ui.mostrarTabla_pushButton.clicked.connect( self.mostrarTabla )
+        self.ui.orderById_pushButton.clicked.connect( self.ordenarId )
+        self.ui.orderBySpeed_pushButton.clicked.connect( self.ordenarVelocidad )
+
 
         # Graficos
         self.ui.limpiar.clicked.connect( self.limpiar )
@@ -67,6 +70,13 @@ class MainWindow(QMainWindow):
             self.scene.addLine( oriX, oriY, desX, desY, pen )
 
 
+    def ordenarId(self):
+        print("Ordenando por id")
+
+
+    def ordenarVelocidad(self):
+        print("Ordenando por distancia")
+        
 
     def mostrarTabla(self):
         print("Mostrar tabla")

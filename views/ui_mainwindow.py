@@ -213,22 +213,32 @@ class Ui_MainWindow(object):
         self.mostrarTabla_pushButton = QPushButton(self.tab_2)
         self.mostrarTabla_pushButton.setObjectName(u"mostrarTabla_pushButton")
 
-        self.gridLayout_4.addWidget(self.mostrarTabla_pushButton, 1, 2, 1, 1)
+        self.gridLayout_4.addWidget(self.mostrarTabla_pushButton, 1, 4, 1, 1)
 
         self.table = QTableWidget(self.tab_2)
         self.table.setObjectName(u"table")
 
-        self.gridLayout_4.addWidget(self.table, 0, 0, 1, 3)
+        self.gridLayout_4.addWidget(self.table, 0, 0, 1, 5)
+
+        self.buscar_pushButton = QPushButton(self.tab_2)
+        self.buscar_pushButton.setObjectName(u"buscar_pushButton")
+
+        self.gridLayout_4.addWidget(self.buscar_pushButton, 1, 3, 1, 1)
 
         self.buscar_lineEdit = QLineEdit(self.tab_2)
         self.buscar_lineEdit.setObjectName(u"buscar_lineEdit")
 
         self.gridLayout_4.addWidget(self.buscar_lineEdit, 1, 0, 1, 1)
 
-        self.buscar_pushButton = QPushButton(self.tab_2)
-        self.buscar_pushButton.setObjectName(u"buscar_pushButton")
+        self.orderById_pushButton = QPushButton(self.tab_2)
+        self.orderById_pushButton.setObjectName(u"orderById_pushButton")
 
-        self.gridLayout_4.addWidget(self.buscar_pushButton, 1, 1, 1, 1)
+        self.gridLayout_4.addWidget(self.orderById_pushButton, 1, 1, 1, 1)
+
+        self.orderBySpeed_pushButton = QPushButton(self.tab_2)
+        self.orderBySpeed_pushButton.setObjectName(u"orderBySpeed_pushButton")
+
+        self.gridLayout_4.addWidget(self.orderBySpeed_pushButton, 1, 2, 1, 1)
 
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_3 = QWidget()
@@ -271,7 +281,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -303,8 +313,10 @@ class Ui_MainWindow(object):
         self.enviarFinal_pushButton.setText(QCoreApplication.translate("MainWindow", u"Agregar al final", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Agregar", None))
         self.mostrarTabla_pushButton.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
-        self.buscar_lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Buscar por ID", None))
         self.buscar_pushButton.setText(QCoreApplication.translate("MainWindow", u"Buscar", None))
+        self.buscar_lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Buscar por ID", None))
+        self.orderById_pushButton.setText(QCoreApplication.translate("MainWindow", u"Ordenar ID", None))
+        self.orderBySpeed_pushButton.setText(QCoreApplication.translate("MainWindow", u"Ordenar velocidad", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Tabla", None))
         self.dibujar.setText(QCoreApplication.translate("MainWindow", u"Dibujar", None))
         self.limpiar.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
