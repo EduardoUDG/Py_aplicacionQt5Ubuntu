@@ -31,6 +31,10 @@ class StartLabs:
             raise StopIteration
 
 
+    def ordenarParituclas( self ):
+        return self.__particulas.sort()
+
+
     def guardar(self, ubicacion):
         # archivo = open( ubicacion, 'w' )
         try:

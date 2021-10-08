@@ -95,6 +95,9 @@ class Particula:
     def distancia(self):
         return self.__distancia
 
+    def __lt__( self, other ):
+        return  self.id < other.id
+
     # @origenX.setter
     # def origenX(self, newOrigenX ):
     #     if newOrigenX > 0:
