@@ -31,8 +31,11 @@ class StartLabs:
             raise StopIteration
 
 
-    def ordenarParituclas( self ):
+    def sortById( self ):
         return self.__particulas.sort()
+
+    def sortBySpeed( self ):
+        return self.__particulas.sort( key=lambda particula:particula.velocidad)
 
 
     def guardar(self, ubicacion):

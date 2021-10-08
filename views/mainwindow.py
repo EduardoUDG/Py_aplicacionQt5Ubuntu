@@ -72,13 +72,13 @@ class MainWindow(QMainWindow):
 
     def ordenarId(self):
         print("Ordenando por id")
-        self.acelerador.ordenarParituclas()
+        self.acelerador.sortById()
 
 
 
     def ordenarVelocidad(self):
         print("Ordenando por distancia")
-        
+        self.acelerador.sortBySpeed()
 
     def mostrarTabla(self):
         print("Mostrar tabla")
