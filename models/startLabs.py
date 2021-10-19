@@ -7,10 +7,16 @@ class StartLabs:
         self.__particulas = []
 
     def agregar_final(self, particula:Particula):
+        print("Agregando particula al final")
         self.__particulas.append( particula )
+        
+
+
 
     def agregar_inicio(self, particula:Particula):
+        print("Agregando particula al final")
         self.__particulas.insert( 0, particula )
+
 
     def __str__(self) -> str:
         return "".join( str(e)+"\n" for e in self.__particulas )
