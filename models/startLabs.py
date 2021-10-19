@@ -6,7 +6,7 @@ class StartLabs:
 
     def __init__(self):
         self.__particulas = []
-        self.Dparticulas= {}
+        self.__D= {}
 
     def agregar_final(self, particula:Particula):
         print("Agregando particula al final")
@@ -20,8 +20,12 @@ class StartLabs:
         key     = (origenX,origenY)
         value   = (destinoX,destinoY,distancia)
 
-
-        print( self.Dparticulas )
+        if key in self.__D:
+            self.__D[key].append(value) 
+        else:
+            self.__D[key] = [value]   
+        
+        print( pprint(self.__D, width=4) )
 
 
 
