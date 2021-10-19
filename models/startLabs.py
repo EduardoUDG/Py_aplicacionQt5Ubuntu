@@ -1,15 +1,27 @@
 
 from models.particula import Particula
+from pprint import pprint
 import json
 class StartLabs:
 
     def __init__(self):
         self.__particulas = []
+        self.Dparticulas= {}
 
     def agregar_final(self, particula:Particula):
         print("Agregando particula al final")
         self.__particulas.append( particula )
-        
+        origenX = particula.origenX
+        origenY = particula.origenY
+        destinoX = particula.destinoX
+        destinoY = particula.destinoY
+        distancia = particula.distancia
+
+        key     = (origenX,origenY)
+        value   = (destinoX,destinoY,distancia)
+
+
+        print( self.Dparticulas )
 
 
 
