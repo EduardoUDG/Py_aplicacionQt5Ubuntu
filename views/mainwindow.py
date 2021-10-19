@@ -210,7 +210,7 @@ class MainWindow(QMainWindow):
 
     def mostrar(self):
         self.ui.salida_plainTextEdit.clear()
-        self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador ) + "\n" )
+        self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador.Dparticulas ) + "\n" )
 
 
     def clearData(self):

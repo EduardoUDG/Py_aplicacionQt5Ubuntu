@@ -1,6 +1,6 @@
 
 from models.particula import Particula
-from pprint import pprint
+from pprint import pformat
 import json
 class StartLabs:
 
@@ -25,7 +25,7 @@ class StartLabs:
         else:
             self.__D[key] = [value]   
         
-        print( pprint(self.__D, width=4) )
+        print( pformat(self.__D, width=4) )
 
 
 
@@ -63,6 +63,7 @@ class StartLabs:
     def guardar(self, ubicacion):
         # archivo = open( ubicacion, 'w' )
         try:
+            
             with open(ubicacion,'w') as archivo:
                 # archivo.write( str(self) )
                 listaDic = [ e.to_json() for e in self.__particulas ]
@@ -80,3 +81,8 @@ class StartLabs:
             return 1
         except:
             return 0
+
+
+    @property
+    def Dparticulas(self):
+        return self.__D
