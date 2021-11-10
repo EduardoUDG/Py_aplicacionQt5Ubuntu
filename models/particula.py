@@ -1,5 +1,3 @@
-from typing import OrderedDict
-from typing_extensions import Self
 from models.algoritmos import distancia_euclidiana
 
 
