@@ -1,4 +1,5 @@
 from typing import OrderedDict
+from typing_extensions import Self
 from models.algoritmos import distancia_euclidiana
 
 
@@ -54,7 +55,23 @@ class Particula:
             "blue": self.__blue
         }
 
-    
+    def to_dic(self):
+        return {
+            "id": self.__id,
+            "origenX": self.__origenX,
+            "origenY": self.__origenY,
+            "destinoX": self.__destinoX,
+            "destinoY": self.__destinoY,
+            "velocidad": self.__velocidad,
+            "red": self.__red,
+            "green": self.__green,
+            "blue": self.__blue,
+            "distancia": self.__distancia
+        }
+
+    def __lt__( self, other ):
+        return  self.id < other.id
+
     @property
     def id(self):
         return self.__id
@@ -95,8 +112,6 @@ class Particula:
     def distancia(self):
         return self.__distancia
 
-    def __lt__( self, other ):
-        return  self.id < other.id
 
     # @origenX.setter
     # def origenX(self, newOrigenX ):

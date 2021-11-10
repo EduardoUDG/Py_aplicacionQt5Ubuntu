@@ -1,10 +1,13 @@
 from os import pardir
 from PySide2.QtGui import QColor, QPen
+from PySide2.QtWidgets import QFileDialog, QGraphicsScene, QMainWindow, QMessageBox, QTableWidgetItem
 from models.algoritmos import distancia_euclidiana
 from .ui_mainwindow import Ui_MainWindow
-from PySide2.QtWidgets import QFileDialog, QGraphicsScene, QMainWindow, QMessageBox, QTableWidgetItem
 from models.particula import Particula
-from models.startLabs import StartLabs
+from models.startLabs import StartLabs # administradora
+from pprint import pprint #imprimir dicionarios
+from collections import deque, defaultdict
+
 
 class MainWindow(QMainWindow):
 
