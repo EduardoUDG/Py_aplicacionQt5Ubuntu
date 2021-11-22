@@ -89,11 +89,6 @@ class StartLabs:
         except:
             return 0
 
-
-    @property
-    def Dparticulas(self):
-        return self.__dic
-
     
     def agregarDiccionario(self, particula):
         origen = (particula.origenX, particula.origenY)

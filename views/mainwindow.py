@@ -219,19 +219,42 @@ class MainWindow(QMainWindow):
         # self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador ) + "\n" )
         self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador.diccionario ) + "\n" )
 
-        # for key, value in self.acelerador.diccionario.items():
-        #     pares = str(key) + " : \n" + str(value) + "\n"
-        #     self.ui.salida_plainTextEdit.insertPlainText(str(pares))
-        #     self.ui.salida_plainTextEdit.insertPlainText( "\n" )
-
-    def mostrarJson(self):
+    def recorrido_Profundo(self):
         self.limpiar()
         self.dibujar()
         self.ui.salida_plainTextEdit.clear()
-        for key, value in self.acelerador.diccionario.items():
-            pares = str(key) + " : \n" + str(value) + "\n"
-            self.ui.salida_plainTextEdit.insertPlainText(str(pares))
-            self.ui.salida_plainTextEdit.insertPlainText( "\n" )
+        origen_x = self.ui.vertice_x_spinBox.value()
+        origen_y = self.ui.vertice_y_spinBox.value()
+        vertices_visitados = []
+        pila = []
+        origen = (origen_x, origen_y)
+        self.ui.salida_plainTextEdit.insertPlainText(
+            "     Lista de recorrido por Profundidad\n\n")
+        if origen not in self.particulas.diccionario.keys():
+            self.ui.salida_plainTextEdit.insertPlainText(
+                "\n\t*El vertice no existe*")
+            return
+        pila.append(origen)
+        vertices_visitados.append(origen)
+        while pila:
+            actual = pila.pop()
+            self.ui.salida_plainTextEdit.insertPlainText(
+                "\t→ " + str(actual) + "\n")
+            for key, value in self.particulas.diccionario[actual]:
+                if key not in vertices_visitados:
+                    pila.append(key)
+                    vertices_visitados.append(key)
+
+
+
+    # def mostrarJson(self):
+    #     self.limpiar()
+    #     self.dibujar()
+    #     self.ui.salida_plainTextEdit.clear()
+    #     for key, value in self.acelerador.diccionario.items():
+    #         pares = str(key) + " : \n" + str(value) + "\n"
+    #         self.ui.salida_plainTextEdit.insertPlainText(str(pares))
+    #         self.ui.salida_plainTextEdit.insertPlainText( "\n" )
 
     
     def convertToDic(self):
