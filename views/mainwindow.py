@@ -39,6 +39,8 @@ class MainWindow(QMainWindow):
         self.scene = QGraphicsScene()
         self.scene2 = QGraphicsScene()
         self.ui.graphicsView.setScene( self.scene )
+        self.ui.graphicsView.setScene( self.scene2 )
+
 
 
     def limpiar(self):
@@ -214,38 +216,39 @@ class MainWindow(QMainWindow):
 
     def mostrar(self):
         self.ui.salida_plainTextEdit.clear()
-        self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador.Dparticulas ) + "\n" )
+        self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador ) + "\n" )
 
-    # def convertToDic(self):
-    #     pen2 = QPen()
-    #     pen2.setWidth(2)
+    
+    def convertToDic(self):
+        pen2 = QPen()
+        pen2.setWidth(2)
 
-    #     d = {}
-    #     anterior = [0,0,0]
-    #     it = 1
+        d = {}
+        anterior = [0,0,0]
+        it = 1
 
-    #     for particula in self.acelerador:
-    #         self.ui.salida_plainTextEdit.clear()
-    #         self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador.Dparticulas ) + "\n" )
+        for particula in self.acelerador:
+            # código para mostrar en plain text edit
+            self.ui.salida_plainTextEdit.clear()
+            self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador) )
 
-    #         # código lista de adyacencia
-    #         if anterior[0] == 0:
-    #             d[(particula.origenX, particula.origenY)] = ( str(particula.origenX), str(particula.origenY), str(particula.distancia) )
-    #         else:
-    #             d[(particula.origenX, particula.origenY)] = ( str(anterior[0]), str(anterior[1]), str(anterior[2]) )
-    #         if it == len( self.acelerador ):
-    #             d[(str(particula.origenX), str(particula.origenY))] = ( str(particula.origenX), str(particula.origenY), str(particula.distancia) )
-    #         anterior[0] = str( particula.origenX )
-    #         anterior[1] = str( particula.origenY )
-    #         anterior[2] = str( particula.distancia )
-    #         it += 1
+            # código lista de adyacencia
+            if anterior[0] == 0:
+                d[(particula.origenX, particula.origenY)] = ( str(particula.destinoX), str(particula.destinoY), str(particula.distancia) )
+            else:
+                d[(particula.origenX, particula.origenY)] = ( str(anterior[str(particula.destinoX)]), str(anterior[str(particula.destinoY)]), str(anterior[str(particula.distancia)]) )
+            if it == len( self.acelerador ):
+                d[(str(particula.destinoX), str(particula.destinoY))] = ( str(particula.origenX), str(particula.origenY), str(particula.distancia) )
+            anterior[0] = str( particula.origenX )
+            anterior[1] = str( particula.origenY )
+            anterior[2] = str( particula.distancia )
+            it += 1
 
-
-    #     for key , value in d.items():
-    #         m = key, value
-    #         self.ui.salida_plainTextEdit.insertPlainText( str(m) + "\n" )
-
-
+        # Insertar en plain text
+        for key , value in d.items():
+            m = key, value
+            self.ui.salida_plainTextEdit.insertPlainText( str(m) )
+            self.ui.salida_plainTextEdit.insertPlainText( '\n' )
 
 
     def clearData(self):
