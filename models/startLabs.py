@@ -2,15 +2,18 @@
 from models.particula import Particula
 from pprint import pformat
 import json
+
 class StartLabs:
 
     def __init__(self):
         self.__particulas = []
-        self.__D= {}
+        self.diccionario= {}
 
     def agregar_final(self, particula:Particula):
         print("Agregando particula al final")
         self.__particulas.append( particula )
+        self.agregarDiccionario( particula )
+
         origenX = particula.origenX
         origenY = particula.origenY
         destinoX = particula.destinoX
@@ -32,6 +35,7 @@ class StartLabs:
     def agregar_inicio(self, particula:Particula):
         print("Agregando particula al final")
         self.__particulas.insert( 0, particula )
+        self.agregarDiccionario(particula)
 
 
     def __str__(self) -> str:
@@ -76,8 +80,11 @@ class StartLabs:
         try:
             with open(ubicacion,'r') as archivo:
                 listaDic = json.load( archivo )
-
                 self.__particulas = [ Particula(**e) for e in listaDic ]
+
+                self.diccionario = {}
+                for particula in self.__particulas:
+                    self.agregarDiccionario( particula )
             return 1
         except:
             return 0
@@ -85,4 +92,19 @@ class StartLabs:
 
     @property
     def Dparticulas(self):
-        return self.__D
+        return self.__dic
+
+    
+    def agregarDiccionario(self, particula):
+        origen = (particula.origenX, particula.origenY)
+        destino = (particula.destinoX, particula.destinoY)
+
+        if origen in self.diccionario:
+            self.diccionario[origen].append((destino,particula.distancia))
+        else:
+            self.diccionario[origen] = [(destino,particula.distancia)]
+
+        if destino in self.diccionario:
+            self.diccionario[destino].append((origen,particula.distancia))
+        else:
+            self.diccionario[destino] = [(origen,particula.distancia)]

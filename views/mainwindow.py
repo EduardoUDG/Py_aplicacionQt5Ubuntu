@@ -216,7 +216,22 @@ class MainWindow(QMainWindow):
 
     def mostrar(self):
         self.ui.salida_plainTextEdit.clear()
-        self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador ) + "\n" )
+        # self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador ) + "\n" )
+        self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador.diccionario ) + "\n" )
+
+        # for key, value in self.acelerador.diccionario.items():
+        #     pares = str(key) + " : \n" + str(value) + "\n"
+        #     self.ui.salida_plainTextEdit.insertPlainText(str(pares))
+        #     self.ui.salida_plainTextEdit.insertPlainText( "\n" )
+
+    def mostrarJson(self):
+        self.limpiar()
+        self.dibujar()
+        self.ui.salida_plainTextEdit.clear()
+        for key, value in self.acelerador.diccionario.items():
+            pares = str(key) + " : \n" + str(value) + "\n"
+            self.ui.salida_plainTextEdit.insertPlainText(str(pares))
+            self.ui.salida_plainTextEdit.insertPlainText( "\n" )
 
     
     def convertToDic(self):
@@ -230,7 +245,7 @@ class MainWindow(QMainWindow):
         for particula in self.acelerador:
             # código para mostrar en plain text edit
             self.ui.salida_plainTextEdit.clear()
-            self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador) )
+            self.ui.salida_plainTextEdit.insertPlainText( pprint( self.acelerador) )
 
             # código lista de adyacencia
             if anterior[0] == 0:
