@@ -37,9 +37,9 @@ class MainWindow(QMainWindow):
         self.ui.limpiar.clicked.connect( self.limpiar )
         self.ui.dibujar.clicked.connect( self.dibujar )
         self.scene = QGraphicsScene()
-        self.scene2 = QGraphicsScene()
+        # self.scene2 = QGraphicsScene()
         self.ui.graphicsView.setScene( self.scene )
-        self.ui.graphicsView.setScene( self.scene2 )
+        # self.ui.graphicsView.setScene( self.scene2 )
 
 
 
@@ -65,7 +65,7 @@ class MainWindow(QMainWindow):
             b = particula.blue
             color = QColor( r,g,b )
             pen.setColor( color )
-
+            
             oriX = particula.origenX
             oriY = particula.origenY
             desX = particula.destinoX
