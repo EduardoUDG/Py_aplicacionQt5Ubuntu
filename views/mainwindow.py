@@ -1,5 +1,5 @@
 from os import pardir
-from PySide2.QtGui import QColor, QPen
+from PySide2.QtGui import QColor, QPen, QBrush
 from PySide2.QtWidgets import QFileDialog, QGraphicsScene, QMainWindow, QMessageBox, QTableWidgetItem
 from models.algoritmos import distancia_euclidiana
 from .ui_mainwindow import Ui_MainWindow
@@ -192,6 +192,7 @@ class MainWindow(QMainWindow):
         except:
             QMessageBox.critical(self, "Error", "Ocurrio un error al abrir")
 
+    # ------- Grafos -------
 
     def recorrerGrafo( self ):
         print("Recorrre grafo")
@@ -207,25 +208,27 @@ class MainWindow(QMainWindow):
         self.scene2.clear()
         for particula in self.acelerador:
             pen = QPen()
-            pen.setWidth( 2 )
+            pen.setWidth( 10 )
             r = particula.red
             g = particula.green
             b = particula.blue
             color = QColor( r,g,b )
             pen.setColor( color )
+            brush = QBrush(color)
             
             oriX = particula.origenX
             oriY = particula.origenY
             desX = particula.destinoX
             desY = particula.destinoY
 
-            self.scene2.addEllipse( oriX, oriY, 5, 5, pen )
-            self.scene2.addEllipse( desX, desY, 5, 5, pen )
+            self.scene2.addEllipse( oriX-3, oriY-3, 8, 8, pen, brush )
+            self.scene2.addEllipse( desX-3, desY-3, 8, 8, pen, brush )
+            pen.setWidth( 5 )
             self.scene2.addLine( oriX, oriY, desX, desY, pen )
     
+
     def recorrerGrafoProfundidad( self ):
         print("Recorrre grafo profundidad")
-
 
 
     def clickEnviarInicio(self):
@@ -262,6 +265,7 @@ class MainWindow(QMainWindow):
         self.ui.salida_plainTextEdit.clear()
         # self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador ) + "\n" )
         self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador.diccionario ) + "\n" )
+
 
     def recorrido_Profundo(self):
         self.limpiar()
