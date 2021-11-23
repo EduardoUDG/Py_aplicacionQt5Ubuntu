@@ -45,7 +45,7 @@ class MainWindow(QMainWindow):
         self.ui.grafo_dibujar_pushButton.clicked.connect(self.dibujarGrafo)
         self.ui.grafo_profundidad_pushButton.clicked.connect(self.recorrerGrafoProfundidad)
         self.scene2 = QGraphicsScene()
-        self.ui.graphicsView.setScene( self.scene2 )
+        self.ui.grafo_graphicsView.setScene( self.scene2 )
 
 
 
@@ -59,6 +59,11 @@ class MainWindow(QMainWindow):
             self.ui.graphicsView.scale( 1.2, 1.2)
         else:
             self.ui.graphicsView.scale( 0.8, 0.8 )
+
+        if( event.delta()>0 ):
+            self.ui.grafo_graphicsView.scale( 1.2, 1.2)
+        else:
+            self.ui.grafo_graphicsView.scale( 0.8, 0.8 )
 
 
     def dibujar(self):
@@ -187,14 +192,36 @@ class MainWindow(QMainWindow):
         except:
             QMessageBox.critical(self, "Error", "Ocurrio un error al abrir")
 
+
     def recorrerGrafo( self ):
         print("Recorrre grafo")
 
+
     def mostrarGrafo( self ):
-        print("Mostrar grafo")
+        self.ui.grafo_plainTextEdit.clear()
+        self.ui.grafo_plainTextEdit.insertPlainText( str( self.acelerador.diccionario ) + "\n" )
+
 
     def dibujarGrafo( self ):
-        print("Dibujar grafo")
+        # print("Dibujar grafo")
+        self.scene2.clear()
+        for particula in self.acelerador:
+            pen = QPen()
+            pen.setWidth( 2 )
+            r = particula.red
+            g = particula.green
+            b = particula.blue
+            color = QColor( r,g,b )
+            pen.setColor( color )
+            
+            oriX = particula.origenX
+            oriY = particula.origenY
+            desX = particula.destinoX
+            desY = particula.destinoY
+
+            self.scene2.addEllipse( oriX, oriY, 5, 5, pen )
+            self.scene2.addEllipse( desX, desY, 5, 5, pen )
+            self.scene2.addLine( oriX, oriY, desX, desY, pen )
     
     def recorrerGrafoProfundidad( self ):
         print("Recorrre grafo profundidad")
