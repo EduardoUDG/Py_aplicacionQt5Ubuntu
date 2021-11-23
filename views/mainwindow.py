@@ -227,8 +227,32 @@ class MainWindow(QMainWindow):
             self.scene2.addLine( oriX, oriY, desX, desY, pen )
     
 
-    def recorrerGrafoProfundidad( self ):
+    def recorrerGrafoProfundidad( self ): # Recorrido por ampl
         print("Recorrre grafo profundidad")
+        self.ui.grafo_plainTextEdit.clear()
+        origen_x = self.ui.grafo_origenx_spinBox.value()
+        origen_y = self.ui.grafo_origeny_spinBox.value()
+
+        vertices_visitados = []
+        pila = []
+        origen = (origen_x, origen_y)
+        self.ui.grafo_plainTextEdit.insertPlainText(
+            "     Lista de recorrido por Profundidad\n\n")
+        if origen not in self.acelerador.diccionario.keys():
+            self.ui.grafo_plainTextEdit.insertPlainText(
+                "\n\t*El vertice no existe*")
+            return
+        pila.append(origen)
+        vertices_visitados.append(origen)
+        while pila:
+            actual = pila.pop()
+            self.ui.grafo_plainTextEdit.insertPlainText(
+                "\t→ " + str(actual) + "\n")
+            for key, value in self.acelerador.diccionario[actual]:
+                if key not in vertices_visitados:
+                    pila.append(key)
+                    vertices_visitados.append(key)
+
 
 
     def clickEnviarInicio(self):
@@ -265,34 +289,6 @@ class MainWindow(QMainWindow):
         self.ui.salida_plainTextEdit.clear()
         # self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador ) + "\n" )
         self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador.diccionario ) + "\n" )
-
-
-    def recorrido_Profundo(self):
-        self.limpiar()
-        self.dibujar()
-        self.ui.salida_plainTextEdit.clear()
-        origen_x = self.ui.vertice_x_spinBox.value()
-        origen_y = self.ui.vertice_y_spinBox.value()
-        vertices_visitados = []
-        pila = []
-        origen = (origen_x, origen_y)
-        self.ui.salida_plainTextEdit.insertPlainText(
-            "     Lista de recorrido por Profundidad\n\n")
-        if origen not in self.particulas.diccionario.keys():
-            self.ui.salida_plainTextEdit.insertPlainText(
-                "\n\t*El vertice no existe*")
-            return
-        pila.append(origen)
-        vertices_visitados.append(origen)
-        while pila:
-            actual = pila.pop()
-            self.ui.salida_plainTextEdit.insertPlainText(
-                "\t→ " + str(actual) + "\n")
-            for key, value in self.particulas.diccionario[actual]:
-                if key not in vertices_visitados:
-                    pila.append(key)
-                    vertices_visitados.append(key)
-
 
 
     # def mostrarJson(self):
