@@ -37,17 +37,22 @@ class MainWindow(QMainWindow):
         self.ui.limpiar.clicked.connect( self.limpiar )
         self.ui.dibujar.clicked.connect( self.dibujar )
         self.scene = QGraphicsScene()
-        # self.scene2 = QGraphicsScene()
         self.ui.graphicsView.setScene( self.scene )
-        # self.ui.graphicsView.setScene( self.scene2 )
 
         # Grafos
+        self.ui.grafo_recorrer_pushButton.clicked.connect(self.recorrerGrafo)
+        self.ui.grafo_mostrar_pushButton.clicked.connect(self.mostrarGrafo)
+        self.ui.grafo_dibujar_pushButton.clicked.connect(self.dibujarGrafo)
+        self.ui.grafo_profundidad_pushButton.clicked.connect(self.recorrerGrafoProfundidad)
+        self.scene2 = QGraphicsScene()
+        self.ui.graphicsView.setScene( self.scene2 )
 
 
 
     def limpiar(self):
         print("Limpiar")     
         self.scene.clear()
+
 
     def wheelEvent(self, event):
         if( event.delta()>0 ):
@@ -83,10 +88,10 @@ class MainWindow(QMainWindow):
         self.acelerador.sortById()
 
 
-
     def ordenarVelocidad(self):
         print("Ordenando por distancia")
         self.acelerador.sortBySpeed()
+
 
     def mostrarTabla(self):
         print("Mostrar tabla")
@@ -122,7 +127,6 @@ class MainWindow(QMainWindow):
             self.ui.table.setItem( row, 9, blue )
             row += 1
             
-
 
     def buscar(self):
         print("Buscar")
@@ -162,8 +166,6 @@ class MainWindow(QMainWindow):
         QMessageBox.warning(self, "ID no encontrado", "No se pudo encontrar el ID ingresado")
 
 
-
-
     def guardar( self ):
         print("Guardao")
         ubicacion = QFileDialog.getSaveFileName( self, "Guardar Particulas", ".", "JSON (*.json)" )
@@ -184,6 +186,19 @@ class MainWindow(QMainWindow):
             QMessageBox.information(self, "Exito", "Se abrio correctamente")
         except:
             QMessageBox.critical(self, "Error", "Ocurrio un error al abrir")
+
+    def recorrerGrafo( self ):
+        print("Recorrre grafo")
+
+    def mostrarGrafo( self ):
+        print("Mostrar grafo")
+
+    def dibujarGrafo( self ):
+        print("Dibujar grafo")
+    
+    def recorrerGrafoProfundidad( self ):
+        print("Recorrre grafo profundidad")
+
 
 
     def clickEnviarInicio(self):
