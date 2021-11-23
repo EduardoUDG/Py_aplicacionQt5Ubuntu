@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(894, 615)
+        MainWindow.resize(890, 601)
         self.actionAbrir = QAction(MainWindow)
         self.actionAbrir.setObjectName(u"actionAbrir")
         self.actionGuardar = QAction(MainWindow)
@@ -261,13 +261,68 @@ class Ui_MainWindow(object):
         self.gridLayout_3.addWidget(self.limpiar, 1, 1, 1, 1)
 
         self.tabWidget.addTab(self.tab_3, "")
+        self.tab_4 = QWidget()
+        self.tab_4.setObjectName(u"tab_4")
+        self.gridLayout_6 = QGridLayout(self.tab_4)
+        self.gridLayout_6.setObjectName(u"gridLayout_6")
+        self.grafo_graphicsView = QGraphicsView(self.tab_4)
+        self.grafo_graphicsView.setObjectName(u"grafo_graphicsView")
+
+        self.gridLayout_6.addWidget(self.grafo_graphicsView, 0, 0, 7, 1)
+
+        self.grafo_plainTextEdit = QPlainTextEdit(self.tab_4)
+        self.grafo_plainTextEdit.setObjectName(u"grafo_plainTextEdit")
+
+        self.gridLayout_6.addWidget(self.grafo_plainTextEdit, 0, 1, 1, 2)
+
+        self.label_11 = QLabel(self.tab_4)
+        self.label_11.setObjectName(u"label_11")
+
+        self.gridLayout_6.addWidget(self.label_11, 1, 1, 1, 1)
+
+        self.grafo_origenx_spinBox = QSpinBox(self.tab_4)
+        self.grafo_origenx_spinBox.setObjectName(u"grafo_origenx_spinBox")
+
+        self.gridLayout_6.addWidget(self.grafo_origenx_spinBox, 1, 2, 1, 1)
+
+        self.label_12 = QLabel(self.tab_4)
+        self.label_12.setObjectName(u"label_12")
+
+        self.gridLayout_6.addWidget(self.label_12, 2, 1, 1, 1)
+
+        self.grafo_origeny_spinBox = QSpinBox(self.tab_4)
+        self.grafo_origeny_spinBox.setObjectName(u"grafo_origeny_spinBox")
+
+        self.gridLayout_6.addWidget(self.grafo_origeny_spinBox, 2, 2, 1, 1)
+
+        self.grafo_recorrer_pushButton = QPushButton(self.tab_4)
+        self.grafo_recorrer_pushButton.setObjectName(u"grafo_recorrer_pushButton")
+
+        self.gridLayout_6.addWidget(self.grafo_recorrer_pushButton, 3, 1, 1, 2)
+
+        self.grafo_mostrar_pushButton = QPushButton(self.tab_4)
+        self.grafo_mostrar_pushButton.setObjectName(u"grafo_mostrar_pushButton")
+
+        self.gridLayout_6.addWidget(self.grafo_mostrar_pushButton, 4, 1, 1, 2)
+
+        self.grafo_dibujar_pushButton = QPushButton(self.tab_4)
+        self.grafo_dibujar_pushButton.setObjectName(u"grafo_dibujar_pushButton")
+
+        self.gridLayout_6.addWidget(self.grafo_dibujar_pushButton, 5, 1, 1, 2)
+
+        self.grafo_profundidad_pushButton = QPushButton(self.tab_4)
+        self.grafo_profundidad_pushButton.setObjectName(u"grafo_profundidad_pushButton")
+
+        self.gridLayout_6.addWidget(self.grafo_profundidad_pushButton, 6, 1, 1, 2)
+
+        self.tabWidget.addTab(self.tab_4, "")
 
         self.gridLayout_5.addWidget(self.tabWidget, 0, 0, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 894, 22))
+        self.menubar.setGeometry(QRect(0, 0, 890, 22))
         self.menuArchivo = QMenu(self.menubar)
         self.menuArchivo.setObjectName(u"menuArchivo")
         MainWindow.setMenuBar(self.menubar)
@@ -281,7 +336,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -321,6 +376,13 @@ class Ui_MainWindow(object):
         self.dibujar.setText(QCoreApplication.translate("MainWindow", u"Dibujar", None))
         self.limpiar.setText(QCoreApplication.translate("MainWindow", u"Limpiar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Graficos", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Origen X", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"Origen Y", None))
+        self.grafo_recorrer_pushButton.setText(QCoreApplication.translate("MainWindow", u"Recorrer", None))
+        self.grafo_mostrar_pushButton.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
+        self.grafo_dibujar_pushButton.setText(QCoreApplication.translate("MainWindow", u"Dibujar", None))
+        self.grafo_profundidad_pushButton.setText(QCoreApplication.translate("MainWindow", u"Recorrido profundidad", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"Grafo", None))
         self.menuArchivo.setTitle(QCoreApplication.translate("MainWindow", u"Archivo", None))
     # retranslateUi
 

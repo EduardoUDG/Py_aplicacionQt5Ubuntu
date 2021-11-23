@@ -41,6 +41,8 @@ class MainWindow(QMainWindow):
         self.ui.graphicsView.setScene( self.scene )
         # self.ui.graphicsView.setScene( self.scene2 )
 
+        # Grafos
+
 
 
     def limpiar(self):
