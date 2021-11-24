@@ -44,19 +44,19 @@ class Particula:
 
     def to_json(self):
         return {
-            "id": self.__id,
-            "origenX": self.__origenX,
-            "origenY": self.__origenY,
-            "destinoX": self.__destinoX,
-            "destinoY": self.__destinoY,
-            "velocidad": self.__velocidad,
-            "red": self.__red,
-            "green": self.__green,
-            "blue": self.__blue
+            "id" : self.__id,
+            "origenX" : self.__origenX,
+            "origenY" : self.__origenY,
+            "destinoX" : self.__destinoX,
+            "destinoY" : self.__destinoY,
+            "velocidad" : self.__velocidad,
+            "red" : self.__red,
+            "green" : self.__green,
+            "blue" : self.__blue
         }
 
     def __lt__( self, other ):
-        return  self.id < other.id
+        return  self.__id < other.__id
 
     @property
     def id(self):
@@ -76,7 +76,7 @@ class Particula:
 
     @property
     def destinoY(self):
-        return self.__destinoX
+        return self.__destinoY
 
     @property
     def velocidad(self):

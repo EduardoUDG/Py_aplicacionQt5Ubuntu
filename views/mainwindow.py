@@ -6,7 +6,6 @@ from .ui_mainwindow import Ui_MainWindow
 from models.particula import Particula
 from models.startLabs import StartLabs # administradora
 from pprint import pprint #imprimir dicionarios
-from collections import deque, defaultdict
 
 
 class MainWindow(QMainWindow):
@@ -229,13 +228,14 @@ class MainWindow(QMainWindow):
 
     def recorrerGrafoProfundidad(self): 
         self.ui.grafo_plainTextEdit.clear()
-        print( self.acelerador.diccionario )
         origenX = self.ui.grafo_origenx_spinBox.value()
         origenY = self.ui.grafo_origeny_spinBox.value()
         vertices_visitados = []
         pila = []
         origen = (origenX, origenY)
         self.ui.grafo_plainTextEdit.insertPlainText("Lista de recorrido profundidad\n")
+
+        print( self.acelerador.diccionario )
         if origen not in self.acelerador.diccionario.keys():
             self.ui.grafo_plainTextEdit.insertPlainText("*No existe el vertice ingresado*")
             return
