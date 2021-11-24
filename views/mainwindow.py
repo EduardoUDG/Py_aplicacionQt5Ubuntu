@@ -199,7 +199,7 @@ class MainWindow(QMainWindow):
 
     def mostrarGrafo( self ):
         self.ui.grafo_plainTextEdit.clear()
-        self.ui.grafo_plainTextEdit.insertPlainText( str( self.acelerador.diccionario ) + "\n" )
+        self.ui.grafo_plainTextEdit.insertPlainText( str( self.acelerador.diccionario ) + "\n\n" + str( self.acelerador ) )
 
 
     def dibujarGrafo( self ):
@@ -234,8 +234,6 @@ class MainWindow(QMainWindow):
         pila = []
         origen = (origenX, origenY)
         self.ui.grafo_plainTextEdit.insertPlainText("Lista de recorrido profundidad\n")
-
-        print( self.acelerador.diccionario )
         if origen not in self.acelerador.diccionario.keys():
             self.ui.grafo_plainTextEdit.insertPlainText("*No existe el vertice ingresado*")
             return

@@ -282,6 +282,7 @@ class Ui_MainWindow(object):
 
         self.grafo_origenx_spinBox = QSpinBox(self.tab_4)
         self.grafo_origenx_spinBox.setObjectName(u"grafo_origenx_spinBox")
+        self.grafo_origenx_spinBox.setMaximum(500)
 
         self.gridLayout_6.addWidget(self.grafo_origenx_spinBox, 1, 2, 1, 1)
 
@@ -292,6 +293,7 @@ class Ui_MainWindow(object):
 
         self.grafo_origeny_spinBox = QSpinBox(self.tab_4)
         self.grafo_origeny_spinBox.setObjectName(u"grafo_origeny_spinBox")
+        self.grafo_origeny_spinBox.setMaximum(500)
 
         self.gridLayout_6.addWidget(self.grafo_origeny_spinBox, 2, 2, 1, 1)
 
