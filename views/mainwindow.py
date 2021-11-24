@@ -227,17 +227,15 @@ class MainWindow(QMainWindow):
             self.scene2.addLine( oriX, oriY, desX, desY, pen )
     
 
-    def recorrerGrafoProfundidad( self ): # Recorrido por ampl
-        print("Recorrer grafo profundidad")
+    def recorrerGrafoProfundidad(self): 
         self.ui.grafo_plainTextEdit.clear()
-        origen_x = self.ui.grafo_origenx_spinBox.value()
-        origen_y = self.ui.grafo_origeny_spinBox.value()
-
+        print( self.acelerador.diccionario )
+        origenX = self.ui.grafo_origenx_spinBox.value()
+        origenY = self.ui.grafo_origeny_spinBox.value()
         vertices_visitados = []
         pila = []
-        origen = (origen_x, origen_y)
-        self.ui.grafo_plainTextEdit.insertPlainText(
-            "Lista de recorrido profundidad\n")
+        origen = (origenX, origenY)
+        self.ui.grafo_plainTextEdit.insertPlainText("Lista de recorrido profundidad\n")
         if origen not in self.acelerador.diccionario.keys():
             self.ui.grafo_plainTextEdit.insertPlainText("*No existe el vertice ingresado*")
             return

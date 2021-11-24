@@ -15,7 +15,7 @@ class Particula:
         self.__red = red
         self.__green = green
         self.__blue = blue
-        self.__distancia = distancia_euclidiana( self.__origenX, self.__origenY, self.__destinoX, self.__destinoY )
+        self.__distancia = distancia_euclidiana( self.__origenX, self.__destinoX, self.__origenY, self.__destinoY )
 
 
     def __str__(self) -> str:
@@ -38,6 +38,8 @@ class Particula:
             + str(self.__green)
             + " blue: "
             + str(self.__blue)
+            + " distancia: "
+            + str(self.__distancia)
         )
 
     def to_json(self):
@@ -51,20 +53,6 @@ class Particula:
             "red": self.__red,
             "green": self.__green,
             "blue": self.__blue
-        }
-
-    def to_dic(self):
-        return {
-            "id": self.__id,
-            "origenX": self.__origenX,
-            "origenY": self.__origenY,
-            "destinoX": self.__destinoX,
-            "destinoY": self.__destinoY,
-            "velocidad": self.__velocidad,
-            "red": self.__red,
-            "green": self.__green,
-            "blue": self.__blue,
-            "distancia": self.__distancia
         }
 
     def __lt__( self, other ):

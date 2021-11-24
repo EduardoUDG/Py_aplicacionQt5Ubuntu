@@ -14,26 +14,9 @@ class StartLabs:
         self.__particulas.append( particula )
         self.agregarDiccionario( particula )
 
-        origenX = particula.origenX
-        origenY = particula.origenY
-        destinoX = particula.destinoX
-        destinoY = particula.destinoY
-        distancia = particula.distancia
-
-        key     = (origenX,origenY)
-        value   = (destinoX,destinoY,distancia)
-
-        if key in self.__D:
-            self.__D[key].append(value) 
-        else:
-            self.__D[key] = [value]   
-        
-        print( pformat(self.__D, width=4) )
-
-
 
     def agregar_inicio(self, particula:Particula):
-        print("Agregando particula al final")
+        print("Agregando particula al inicio")
         self.__particulas.insert( 0, particula )
         self.agregarDiccionario(particula)
 
