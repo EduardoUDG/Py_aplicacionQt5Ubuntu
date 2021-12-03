@@ -7,9 +7,9 @@ from models.particula import Particula
 from models.startLabs import StartLabs  # administradora
 from pprint import pprint  # imprimir dicionarios
 
-# from models.nodo import Nodo
-# from models.arista import Arista, AristaNoDirigida, AristaNoDirigidaPonderada
-# from models.grafo import Grafo
+from models.nodo import Nodo
+from models.arista import Arista, AristaNoDirigida, AristaNoDirigidaPonderada
+from models.grafo import Grafo
 
 
 class MainWindow(QMainWindow):
@@ -289,31 +289,31 @@ class MainWindow(QMainWindow):
 
     def grafoPrim(self):
         print("Grafo Prim")
-    #     origen_x = self.ui.origen_x_spinBox.value()
-    #     origen_y = self.ui.origen_y_spinBox.value()
-    #     origen = (origen_x, origen_y)
-    #     if origen not in self.grafo.get_lista_ady_ponderada():
-    #         return QMessageBox.critical(
-    #             self,
-    #             "Error",
-    #             "Error no se encontro ese origen "
-    #         )
-    #     else:
-    #         self.ui.tabWidget.setCurrentIndex(2)
-    #         self.dibujar()
-    #         pen = QPen()
-    #         pen.setWidth(2)
-    #         color = QColor(255, 0, 128)
-    #         pen.setColor(color)
+        origen_x = self.ui.origen_x_spinBox.value()
+        origen_y = self.ui.origen_y_spinBox.value()
+        origen = (origen_x, origen_y)
+        if origen not in self.grafo.get_lista_ady_ponderada():
+            return QMessageBox.critical(
+                self,
+                "Error",
+                "Error no se encontro ese origen "
+            )
+        else:
+            self.ui.tabWidget.setCurrentIndex(2)
+            self.dibujar()
+            pen = QPen()
+            pen.setWidth(2)
+            color = QColor(255, 0, 128)
+            pen.setColor(color)
 
-    #         print("Arbol de expansión mínima")
-    #         for arista in self.grafo.prim(origen):
-    #             origen = arista[1]
-    #             destino = arista[2]
-    #             self.scene.addLine(
-    #                 origen[0], origen[1], destino[0], destino[1], pen)
-    #             print(arista)
-    #         print('\n')
+            print("Arbol de expansión mínima")
+            for arista in self.grafo.prim(origen):
+                origen = arista[1]
+                destino = arista[2]
+                self.scene.addLine(
+                    origen[0], origen[1], destino[0], destino[1], pen)
+                print(arista)
+            print('\n')
 
     def grafoKruskal(self):
         print("Algoritmo Kruskal")
