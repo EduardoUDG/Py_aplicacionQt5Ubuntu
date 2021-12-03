@@ -8,6 +8,7 @@ class StartLabs:
     def __init__(self):
         self.__particulas = []
         self.diccionario= {}
+        self.__adyPonderado = {}
 
     def agregar_final(self, particula:Particula):
         print("Agregando particula al final")
@@ -86,3 +87,29 @@ class StartLabs:
             self.diccionario[destino].append((origen,particula.distancia))
         else:
             self.diccionario[destino] = [(origen,particula.distancia)]
+
+    
+
+    def get_lista_ady_ponderada(self):
+        self.__adyPonderado.clear()
+
+        for particula in self.__particulas:
+            if particula.dirigido():
+                pass
+            else:
+                n1 = particula.get_nodo1()
+                n2 = particula.get_nodo2()
+                self.agregar_dict_ponderado(n1, n2, arista.peso)
+                self.agregar_dict_ponderado(n2, n1, arista.peso)
+        return self.__adyPonderado
+
+    
+    def print_ady_ponderada(self):
+       self.get_lista_ady_ponderada()
+       for key in self.__adyPonderado.keys():
+           print(key, "---->", end="")
+           for value in self.__adyPonderado[key]:
+               nodo = value[0]
+               peso = value[1]
+               print(f"[{nodo}, {peso}]", "," , end="")
+           print('\n')
