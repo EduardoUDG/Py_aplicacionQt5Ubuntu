@@ -309,7 +309,7 @@
         <string>Grafo</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_6">
-        <item row="0" column="0" rowspan="7">
+        <item row="0" column="0" rowspan="9">
          <widget class="QGraphicsView" name="grafo_graphicsView"/>
         </item>
         <item row="0" column="1" colspan="2">
@@ -322,49 +322,70 @@
           </property>
          </widget>
         </item>
-        <item row="1" column="2">
+        <item row="2" column="1">
          <widget class="QSpinBox" name="grafo_origenx_spinBox">
           <property name="maximum">
            <number>500</number>
           </property>
          </widget>
         </item>
-        <item row="2" column="1">
+        <item row="3" column="1">
          <widget class="QLabel" name="label_12">
           <property name="text">
            <string>Origen Y</string>
           </property>
          </widget>
         </item>
-        <item row="2" column="2">
+        <item row="4" column="1">
          <widget class="QSpinBox" name="grafo_origeny_spinBox">
           <property name="maximum">
            <number>500</number>
           </property>
          </widget>
         </item>
-        <item row="3" column="1" colspan="2">
+        <item row="5" column="1">
          <widget class="QPushButton" name="grafo_recorrer_pushButton">
           <property name="text">
-           <string>Recorrer</string>
+           <string>Limpiar</string>
           </property>
          </widget>
         </item>
-        <item row="4" column="1" colspan="2">
+        <item row="5" column="2">
+         <widget class="QPushButton" name="grafo_prim_pushButton">
+          <property name="text">
+           <string>Prim</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
          <widget class="QPushButton" name="grafo_mostrar_pushButton">
           <property name="text">
            <string>Mostrar</string>
           </property>
          </widget>
         </item>
-        <item row="5" column="1" colspan="2">
+        <item row="6" column="2">
+         <widget class="QPushButton" name="grafo_kruscal_pushButton">
+          <property name="text">
+           <string>Kruscal</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
          <widget class="QPushButton" name="grafo_dibujar_pushButton">
           <property name="text">
            <string>Dibujar</string>
           </property>
          </widget>
         </item>
-        <item row="6" column="1" colspan="2">
+        <item row="7" column="2">
+         <widget class="QPushButton" name="grafo_dijkstra_pushButton_3">
+          <property name="text">
+           <string>Dijkstra</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
          <widget class="QPushButton" name="grafo_profundidad_pushButton">
           <property name="text">
            <string>Recorrido profundidad</string>

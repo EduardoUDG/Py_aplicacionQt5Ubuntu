@@ -43,6 +43,9 @@ class MainWindow(QMainWindow):
         self.ui.grafo_mostrar_pushButton.clicked.connect(self.mostrarGrafo)
         self.ui.grafo_dibujar_pushButton.clicked.connect(self.dibujarGrafo)
         self.ui.grafo_profundidad_pushButton.clicked.connect(self.recorrerGrafoProfundidad)
+        self.ui.grafo_prim_pushButton.clicked.connect(self.grafoPrim )
+        self.ui.grafo_kruscal_pushButton.clicked.connect(self.grafoKruskal )
+        self.ui.grafo_dijkstra_pushButton_3.clicked.connect(self.grafoDijkstra )
         self.scene2 = QGraphicsScene()
         self.ui.grafo_graphicsView.setScene( self.scene2 )
 
@@ -194,7 +197,7 @@ class MainWindow(QMainWindow):
     # ------- Grafos -------
 
     def recorrerGrafo( self ):
-        print("Recorrre grafo")
+        self.ui.grafo_plainTextEdit.clear()
 
 
     def mostrarGrafo( self ):
@@ -285,16 +288,14 @@ class MainWindow(QMainWindow):
         # self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador ) + "\n" )
         self.ui.salida_plainTextEdit.insertPlainText( str( self.acelerador.diccionario ) + "\n" )
 
+    def grafoPrim(self):
+        print("Algoritmo Prim")
 
-    # def mostrarJson(self):
-    #     self.limpiar()
-    #     self.dibujar()
-    #     self.ui.salida_plainTextEdit.clear()
-    #     for key, value in self.acelerador.diccionario.items():
-    #         pares = str(key) + " : \n" + str(value) + "\n"
-    #         self.ui.salida_plainTextEdit.insertPlainText(str(pares))
-    #         self.ui.salida_plainTextEdit.insertPlainText( "\n" )
+    def grafoKruskal(self):
+        print("Algoritmo Kruskal")
 
+    def grafoDijkstra(self):
+        print("Algoritmo Dijkstra")
     
     def convertToDic(self):
         pen2 = QPen()
