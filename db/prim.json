@@ -1,0 +1,90 @@
+[
+     {
+          "id": 0,
+          "origenX": 250,
+          "origenY": 10,
+          "destinoX": 10,
+          "destinoY": 200,
+          "red": 12,
+          "green": 45,
+          "blue": 98,
+          "velocidad": 0.0
+     },
+     {
+          "id": 1,
+          "origenX": 250,
+          "origenY": 10,
+          "destinoX": 400,
+          "destinoY": 200,
+          "red": 12,
+          "green": 200,
+          "blue": 98,
+          "velocidad": 10.0
+     },
+     {
+          "id": 2,
+          "origenX": 400,
+          "origenY": 200,
+          "destinoX": 400,
+          "destinoY": 400,
+          "red": 120,
+          "green": 200,
+          "blue": 98,
+          "velocidad": 10.0
+     },
+     {
+          "id": 3,
+          "origenX": 10,
+          "origenY": 200,
+          "destinoX": 10,
+          "destinoY": 400,
+          "red": 120,
+          "green": 200,
+          "blue": 8,
+          "velocidad": 10.0
+     },
+     {
+          "id": 4,
+          "origenX": 10,
+          "origenY": 400,
+          "destinoX": 400,
+          "destinoY": 400,
+          "red": 100,
+          "green": 200,
+          "blue": 80,
+          "velocidad": 10.0
+     },
+     {
+          "id": 5,
+          "origenX": 10,
+          "origenY": 400,
+          "destinoX": 400,
+          "destinoY": 200,
+          "red": 100,
+          "green": 0,
+          "blue": 0,
+          "velocidad": 10.0
+     },
+     {
+          "id": 6,
+          "origenX": 250,
+          "origenY": 10,
+          "destinoX": 400,
+          "destinoY": 400,
+          "red": 100,
+          "green": 0,
+          "blue": 0,
+          "velocidad": 10.0
+     },
+     {
+          "id": 7,
+          "origenX": 250,
+          "origenY": 10,
+          "destinoX": 10,
+          "destinoY": 400,
+          "red": 100,
+          "green": 0,
+          "blue": 0,
+          "velocidad": 10.0
+     }
+]

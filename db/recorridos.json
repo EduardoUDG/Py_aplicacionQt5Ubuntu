@@ -1,0 +1,112 @@
+[
+    {
+         "id": "1",
+         "origenX": 0,
+         "origenY": 100,
+         "destinoX": 100,
+         "destinoY": 100,
+         "red": 200,
+         "green": 200,
+         "blue": 100,
+         "velocidad": 90.0
+    },
+    {
+         "id": "2",
+         "origenX": 0,
+         "origenY": 100,
+         "destinoX": 200,
+         "destinoY": 150,
+         "red": 200,
+         "green": 60,
+         "blue": 100,
+         "velocidad": 90.0
+    },
+    {
+         "id": "3",
+         "origenX": 100,
+         "origenY": 100,
+         "destinoX": 300,
+         "destinoY": 0,
+         "red": 50,
+         "green": 200,
+         "blue": 100,
+         "velocidad": 45.0
+    },
+    {
+         "id": "4",
+         "origenX": 100,
+         "origenY": 100,
+         "destinoX": 200,
+         "destinoY": 150,
+         "red": 10,
+         "green": 0,
+         "blue": 0,
+         "velocidad": 60.0
+    },
+    {
+         "id": "5",
+         "origenX": 300,
+         "origenY": 0,
+         "destinoX": 200,
+         "destinoY": 150,
+         "red": 200,
+         "green": 200,
+         "blue": 100,
+         "velocidad": 20.0
+    },
+    {
+         "id": "6",
+         "origenX": 300,
+         "origenY": 0,
+         "destinoX": 50,
+         "destinoY": 0,
+         "red": 200,
+         "green": 60,
+         "blue": 100,
+         "velocidad": 50.0
+    },
+    {
+         "id": "7",
+         "origenX": 50,
+         "origenY": 0,
+         "destinoX": 0,
+         "destinoY": 100,
+         "red": 10,
+         "green": 0,
+         "blue": 0,
+         "velocidad": 25.0
+    },
+    {
+         "id": "8",
+         "origenX": 100,
+         "origenY": 100,
+         "destinoX": 50,
+         "destinoY": 0,
+         "red": 120,
+         "green": 20,
+         "blue": 20,
+         "velocidad": 15.0
+    },
+    {
+         "id": "9",
+         "origenX": 0,
+         "origenY": 100,
+         "destinoX": 0,
+         "destinoY": 200,
+         "red": 0,
+         "green": 80,
+         "blue": 20,
+         "velocidad": 100.0
+    },
+    {
+         "id": "10",
+         "origenX": 200,
+         "origenY": 150,
+         "destinoX": 0,
+         "destinoY": 200,
+         "red": 50,
+         "green": 200,
+         "blue": 100,
+         "velocidad": 10.0
+    }
+]
